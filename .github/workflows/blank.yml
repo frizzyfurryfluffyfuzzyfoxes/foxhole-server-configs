@@ -1,0 +1,41 @@
+name: Config deployment
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Install git-ftp
+        run: |
+          curl -LJO https://raw.githubusercontent.com/git-ftp/git-ftp/1.6.0/git-ftp > git-ftp
+          chmod 755 git-ftp
+        shell: bash
+
+      - name: Configure git-ftp
+        run: |
+          git config git-ftp.url "ftp://$FTP_ADDR:21/$FTP_ROOT"
+          git config git-ftp.user "$FTP_USER"
+          git config git-ftp.password "$FTP_PASS"
+        shell: bash
+        env:
+          FTP_ADDR: ${{ secrets.FtpServer }}
+          FTP_ROOT: ${{ secrets.FtpRootDir }}
+          FTP_USER: ${{ secrets.FtpUser }}
+          FTP_PASS: ${{ secrets.FtpPassword }}
+          
+      - name: Deploy
+        run: git ftp catchup
+        shell: bash
