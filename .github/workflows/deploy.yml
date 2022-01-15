@@ -28,14 +28,15 @@ jobs:
         run: |
           git config --global user.email "agentfox@fab5.team"
           git config --global user.name "Agent Fox"
-          git config git-ftp.url "ftp://$FTP_ADDR:21/$FTP_ROOT"
+          git config git-ftp.url "ftp://89.46.223.232:21/89.46.223.232_27015/"
           git config git-ftp.user "$FTP_USER"
           git config git-ftp.password "$FTP_PASS"
           git config git-ftp.insecure 1
+          git config git-ftp.disable-epsv 1
         shell: bash
         env:
-          FTP_ADDR: ${{ secrets.FTP_SERVER }}
-          FTP_ROOT: ${{ secrets.FTP_ROOT_DIR }}
+          # FTP_ADDR: ${{ secrets.FTP_SERVER }}
+          # FTP_ROOT: ${{ secrets.FTP_ROOT_DIR }}
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
 
