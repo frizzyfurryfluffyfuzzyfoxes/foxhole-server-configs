@@ -26,6 +26,8 @@ jobs:
 
       - name: Configure git-ftp
         run: |
+          git config --global user.email "agentfox@fab5.team"
+          git config --global user.name "Agent Fox"
           git config git-ftp.url "ftp://$FTP_ADDR:21/$FTP_ROOT"
           git config git-ftp.user "$FTP_USER"
           git config git-ftp.password "$FTP_PASS"
