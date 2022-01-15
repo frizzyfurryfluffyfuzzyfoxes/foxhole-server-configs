@@ -33,6 +33,7 @@ jobs:
           git config git-ftp.password "$FTP_PASS"
           git config git-ftp.insecure 1
           git config git-ftp.disable-epsv 1
+          git config git-ftp.syncroot .
         shell: bash
         env:
           # FTP_ADDR: ${{ secrets.FTP_SERVER }}
@@ -41,8 +42,6 @@ jobs:
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
 
       - name: Deploy
-        run: |
-          git switch main
-          git ftp push -v
+        run: git ftp push -v
         shell: bash
 
