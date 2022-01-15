@@ -42,6 +42,7 @@ jobs:
 
       - name: Deploy
         run: |
+          git switch main
           git ftp push -f -v
         shell: bash
 
