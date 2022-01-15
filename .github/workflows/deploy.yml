@@ -37,5 +37,7 @@ jobs:
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
           
       - name: Deploy
-        run: git ftp push
+        run: |
+          git commit --allow-empty -m "[DEPLOY] $(date)"
+          git ftp push
         shell: bash
