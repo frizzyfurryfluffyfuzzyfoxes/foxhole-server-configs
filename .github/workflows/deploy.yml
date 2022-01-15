@@ -8,23 +8,37 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
 jobs:
-  web-deploy:
-    name: Deploy CSGO configs
+  # This workflow contains a single job called "build"
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v2
-    
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.2.0
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ secrets.FTP_ROOT_DIR }}
-        local-dir: cfg/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          README.md
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Install git-ftp
+        run: |
+          curl -LJO https://raw.githubusercontent.com/git-ftp/git-ftp/1.6.0/git-ftp > git-ftp
+          chmod 755 git-ftp
+        shell: bash
+
+      - name: Configure git-ftp
+        run: |
+          git config --global user.email "agentfox@fab5.team"
+          git config --global user.name "Agent Fox"
+          git config git-ftp.url "ftp://$FTP_ADDR:21/$FTP_ROOT"
+          git config git-ftp.user "$FTP_USER"
+          git config git-ftp.password "$FTP_PASS"
+        shell: bash
+        env:
+          FTP_ADDR: ${{ secrets.FTP_SERVER }}
+          FTP_ROOT: ${{ secrets.FTP_ROOT_DIR }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          
+      - name: Deploy
+        run: git ftp push -f -v
+        shell: bash
+
