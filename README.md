@@ -14,3 +14,7 @@ will be automatically reflected on the CS:GO server via the automated
 deployment script. Thus to submit a change simply edit the file via
 the GitHub interface or edit it locally and subsequently commit and
 push.
+
+## Config generation
+
+You can use the [Fab5 competitive config generation tool](https://fab5.team/tools/get5config/) to generate an adequate Get5 match config.
