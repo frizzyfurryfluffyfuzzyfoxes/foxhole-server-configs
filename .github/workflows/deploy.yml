@@ -31,14 +31,15 @@ jobs:
           git config git-ftp.url "ftp://$FTP_ADDR:21/$FTP_ROOT"
           git config git-ftp.user "$FTP_USER"
           git config git-ftp.password "$FTP_PASS"
+          git config git-ftp.insecure 1
         shell: bash
         env:
           FTP_ADDR: ${{ secrets.FTP_SERVER }}
           FTP_ROOT: ${{ secrets.FTP_ROOT_DIR }}
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
-          
+
       - name: Deploy
-        run: git ftp push -f -v
+        run: git ftp push -f -vv
         shell: bash
 
