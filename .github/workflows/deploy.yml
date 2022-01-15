@@ -42,7 +42,6 @@ jobs:
 
       - name: Deploy
         run: |
-          git checkout main
-          git ftp push -v
+          git ftp push -f -v
         shell: bash
 
