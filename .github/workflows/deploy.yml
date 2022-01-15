@@ -40,6 +40,6 @@ jobs:
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
 
       - name: Deploy
-        run: git ftp push -f -vv --auto-init --disable-epsv
+        run: git ftp push -f -vv -disable-epsv
         shell: bash
 
