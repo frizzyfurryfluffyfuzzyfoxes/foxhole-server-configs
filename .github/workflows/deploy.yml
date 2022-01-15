@@ -31,10 +31,10 @@ jobs:
           git config git-ftp.password "$FTP_PASS"
         shell: bash
         env:
-          FTP_ADDR: ${{ secrets.FtpServer }}
-          FTP_ROOT: ${{ secrets.FtpRootDir }}
-          FTP_USER: ${{ secrets.FtpUser }}
-          FTP_PASS: ${{ secrets.FtpPassword }}
+          FTP_ADDR: ${{ secrets.FTP_SERVER }}
+          FTP_ROOT: ${{ secrets.FTP_ROOT_DIR }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
           
       - name: Deploy
         run: git ftp catchup
