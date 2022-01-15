@@ -28,7 +28,7 @@ jobs:
         run: |
           git config --global user.email "agentfox@fab5.team"
           git config --global user.name "Agent Fox"
-          git config git-ftp.url "ftp://89.46.223.232:21/89.46.223.232_27015/"
+          git config git-ftp.url "ftp://89.46.223.232:21/89.46.223.232_27015/csgo/"
           git config git-ftp.user "$FTP_USER"
           git config git-ftp.password "$FTP_PASS"
           git config git-ftp.insecure 1
@@ -41,6 +41,6 @@ jobs:
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
 
       - name: Deploy
-        run: git ftp push -f -vv --disable-epsv --insecure
+        run: git ftp catchup -f -vv
         shell: bash
 
