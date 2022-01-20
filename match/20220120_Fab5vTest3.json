@@ -1,0 +1,38 @@
+{
+  "matchid": "20220120_Fab5vTest3",
+  "num_maps": 1,
+  "players_per_team": 5,
+  "min_players_to_ready": 1,
+  "min_spectators_to_ready": 0,
+  "spectators": {},
+  "side_type": "standard",
+  "skip_veto": true,
+  "map_sides": [
+    "team2_ct"
+  ],
+  "maplist": [
+    "de_nuke"
+  ],
+  "team1": {
+    "name": "Fab5",
+    "flag": "DK",
+    "players": [
+      "STEAM_1:1:141078",
+      "STEAM_1:0:18204824",
+      "STEAM_1:0:1619888",
+      "STEAM_1:1:4160840",
+      "STEAM_1:1:18685528",
+      "STEAM_0:1:19872352",
+      "STEAM_0:0:3541981",
+      "STEAM_1:0:16184259",
+      "STEAM_1:0:12230325",
+      "STEAM_1:0:540333376",
+      "STEAM_1:0:2796426"
+    ]
+  },
+  "team2": {
+    "name": "",
+    "flag": "DK",
+    "players": []
+  }
+}
