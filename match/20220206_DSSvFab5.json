@@ -1,0 +1,47 @@
+{
+  "matchid": "20220206_DSSvFab5",
+  "num_maps": 1,
+  "players_per_team": 5,
+  "min_players_to_ready": 1,
+  "min_spectators_to_ready": 0,
+  "spectators": {},
+  "side_type": "standard",
+  "skip_veto": true,
+  "map_sides": [
+    "team2_ct"
+  ],
+  "maplist": [
+    "de_vertigo"
+  ],
+  "team1": {
+    "name": "DS:Seniors",
+    "flag": "DK",
+    "players": [
+      "76561197971454018",
+      "76561198797018577",
+      "76561197989909678",
+      "STEAM_0:0:10722346",
+      "STEAM_1:0:4514555",
+      "76561198063145430",
+      "76561197969050058",
+      "76561198024641466"
+    ]
+  },
+  "team2": {
+    "name": "Fab5",
+    "flag": "DK",
+    "players": [
+      "STEAM_1:1:141078",
+      "STEAM_1:0:18204824",
+      "STEAM_1:0:1619888",
+      "STEAM_1:1:4160840",
+      "STEAM_1:1:18685528",
+      "STEAM_0:1:19872352",
+      "STEAM_0:0:3541981",
+      "STEAM_1:0:16184259",
+      "STEAM_1:0:12230325",
+      "STEAM_1:0:540333376",
+      "STEAM_1:0:2796426"
+    ]
+  }
+}
