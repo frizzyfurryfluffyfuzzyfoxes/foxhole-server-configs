@@ -1,6 +1,6 @@
 {
-  "matchid": "20220508_Fab5vSFS",
-  "num_maps": 3,
+  "matchid": "20220508_Fab5vSFS_2",
+  "num_maps": 1,
   "players_per_team": 5,
   "min_players_to_ready": 1,
   "min_spectators_to_ready": 0,
@@ -8,14 +8,10 @@
   "side_type": "standard",
   "skip_veto": true,
   "map_sides": [
-    "team2_ct",
-    "team1_ct",
-    "knife"
+    "team1_ct"
   ],
   "maplist": [
-    "de_ancient",
-    "de_dust2",
-    "de_inferno"
+    "de_vertigo"
   ],
   "team1": {
     "name": "Fab5",
