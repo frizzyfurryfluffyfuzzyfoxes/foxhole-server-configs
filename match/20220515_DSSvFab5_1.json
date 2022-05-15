@@ -8,12 +8,12 @@
   "side_type": "standard",
   "skip_veto": true,
   "map_sides": [
-    "team1_ct"
+    "team2_ct"
   ],
   "maplist": [
     "de_vertigo"
   ],
-  "team1": {
+  "team2": {
     "name": "DSS",
     "flag": "DK",
     "players": [
@@ -28,7 +28,7 @@
       "76561198987179023"
     ]
   },
-  "team2": {
+  "team1": {
     "name": "Fab5",
     "flag": "DK",
     "players": [
